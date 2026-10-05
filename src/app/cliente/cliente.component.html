@@ -1,0 +1,23 @@
+
+<form (ngSubmit)="crearCliente()">
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="nombre" name ="nombre">
+
+  <label>Email:</label>
+  <input type="text" [(ngModel)]="email" name = "email">
+
+  <button type="submit">{{ this.idEditando != null ? 'Actualizar' : 'Crear' }}</button>
+  
+
+</form>   
+
+ @for (cliente of clientes; track cliente.id) { 
+  <p>{{ cliente.nombre }}</p>
+  <p>{{ cliente.email}}</p>
+  <button (click)="eliminarCliente(cliente.id)">Eliminar Cliente</button>
+  <button (click)="editarCliente(cliente)">Editar Cliente</button>
+}
+ 
+ @if (mensajeError != ''){
+ <p>{{mensajeError}}</p>
+ }
