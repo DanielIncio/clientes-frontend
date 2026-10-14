@@ -1,59 +1,61 @@
-# ClientesFront
+# Clientes Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+Aplicación web hecha con Angular que consume la API [clientes-api](https://github.com/DanielIncio/clientes-api) para gestionar clientes.
 
-## Development server
+## Tecnologías
 
-To start a local development server, run:
+- Angular 19
+- TypeScript 5.7
+- HttpClient para consumir la API REST
 
-```bash
-ng serve
+## Funcionalidades
+
+- Listado de clientes
+- Crear, editar y eliminar clientes
+- Formularios con `ngModel`
+
+## Cómo ejecutarlo
+
+### Requisitos
+
+- Node.js 20 o superior (probado con 22.15.1) y npm
+- Angular CLI (`npm install -g @angular/cli`)
+- El backend [clientes-api](https://github.com/DanielIncio/clientes-api) corriendo en `http://localhost:8080`
+
+### Pasos
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/DanielIncio/clientes-frontend.git
+   cd clientes-frontend
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Revisa que la URL de la API apunte a tu backend en src/app/clientes/clientes.service.ts.
+4. Inicia la aplicación:
+   ```bash
+   ng serve
+   ```
+5. Abre `http://localhost:4200` en el navegador.
+
+
+## Estructura del proyecto
+
+```
+interfaces/   → modelos tipados (Cliente, Usuario)
+services/     → servicios que consumen la API (CrudService y derivados)
+components/   → pantallas y formularios
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Qué aprendí
 
-## Code scaffolding
+- Consumo de una API REST desde Angular con servicios y `HttpClient`
+- Interfaces de TypeScript para tipar los datos
+- Un servicio genérico (`CrudService`) para reutilizar el CRUD
+- Integración de un frontend con un backend protegido con JWT
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Autor
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Daniel Incio** · [GitHub](https://github.com/DanielIncio)
